@@ -24,7 +24,7 @@ function getUserInfo(){
             return layui.layer.msg(res.message)
           }
           //调用来渲染用户头像
-          console.log(res);
+        //   console.log(res);
           renderAvatar(res.data)
         },
         //不论成功失败都会调用该函数 
