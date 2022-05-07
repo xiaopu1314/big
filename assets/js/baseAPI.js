@@ -6,9 +6,8 @@ $.ajaxPrefilter(function(options){
         options.headers = {Authorization:localStorage.getItem("token") || ""}
 
     }
+    //不论成功失败都会调用该函数 ajax
     options.complete = function(res) {
-        // console.log("执行了complete");
-
         if(res.responseJSON.code ===1 && res.responseJSON.message === "身份认证失败！"){
                 localStorage.removeItem("token");
                 location.href="/login.html"
